@@ -186,3 +186,37 @@ Replace {device} = vga,usb,audio,wireless etc.
 
 You will see an output similar to the below screenshot: <br></br>
 ![Screenshot of output- lspci command](<Screenshot 2025-06-25 121951.png>)
+<br></br>
+
+As you can see the IDs of my GPU are **10de:1287** and **1002:67d**.
+
+You may decide you want to find the IDs of your USB controllers too just incase you need to whitelist these down the line due to issues.
+
+To blacklist the devices from use by Proxmox and full access use to your VM run the following commands.
+
+```bash
+nano /etc/modprobe.d/vfio-pci.conf
+```
+Add the device IDs in the blank file like this:
+```bash
+options vfio-pci ids=1234:5678,1234:5678 disable_vga=1
+```
+Replacing the **1234:5678** with your actual IDs, if you only have 1 GPU remove the other IDs from the command.
+
+***Example:***
+```bash
+options vfio-pci ids=10de:1287 disable_vga=1
+```
+You can also add **disable_idle_d3=1** to the end of the line to disable the D3 device power state which will prevent certain hardware from entering low power mode, which can cause issues when passed through to VMs. 
+
+Hit **Ctrl** + **X** > **Y** > **Enter** to save changes.
+
+Once all of the above is sorted reboot your machine once again with the command below:
+```bash
+reboot
+```
+
+# Adding your Devices to your VM(s)
+When your host has rebooted we can finally start adding our devices like GPUs to our Virtual Machines! If you're passing through to HSVE macOS watch the following video below to ensure you have the correct settings.
+
+If you're also unsure on how to passthrough devices to your VM please watch our following video : https://youtu.be/uQxYpokYkZs
