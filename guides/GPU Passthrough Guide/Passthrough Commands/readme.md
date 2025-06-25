@@ -140,3 +140,20 @@ After changing the following modules you need to refresh your initramfs with the
 ```bash
 update-initramfs -u -k all
 ```
+
+Lets check if remapping has been enabled with the following command:
+```bash
+dmesg | grep remapping
+```
+You should see something like "Interrupt remapping enabled / IRQ Remapping Enabled"
+
+If your system doesn't support Remapping you can run this command to enable remapping. **However please be aware that this option could make your system unstable.**
+
+```bash
+nano /etc/modprobe.d/iommu_unsafe_interrupts.conf
+```
+Add the following line:
+```
+options vfio_iommu_type1 allow_unsafe_interrupts=1
+```
+Hit **Ctrl** + **X** > **Y** > **Enter** to save your changes.
