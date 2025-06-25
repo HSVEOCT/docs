@@ -60,7 +60,7 @@ Your system might not be relying on Grub, but **systemd** instead.
 This is often the case when you’re using **ZFS**.  
 So for **systemd**;
 
-# Intel CPUs (Systemd)
+### Intel CPUs (Systemd/ZFS)
 
 ```
 nano /etc/kernel/cmdline
@@ -71,7 +71,7 @@ root=ZFS=rpool/ROOT/pve-1 boot=zfs intel_iommu=on iommu=pt initcall_blacklist
 =sysfb_init
 ```
 
-# AMD CPUs (systemd)
+### AMD CPUs (Systemd/ZFS)
 
 ```
 nano /etc/kernel/cmdline
@@ -79,4 +79,24 @@ nano /etc/kernel/cmdline
 
 ```bash
 GRUB_CMDLINE_LINUX_DEFAULT="quiet iommu=pt initcall_blacklist=sysfb_init"
+```
+
+---
+
+For **Grub** only
+
+```bash
+update-grub
+```
+
+For **Systemd** only
+
+```bash
+pve-efiboot-tool refresh
+```
+
+Reboot to commit changes with:
+
+```bash
+reboot
 ```
