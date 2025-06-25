@@ -100,3 +100,43 @@ Reboot to commit changes with:
 ```bash
 reboot
 ```
+
+**Configuring IOMMU
+
+Once the host is up and running again we need to check if IOMMU is enabled and working. We can do this by running the following commands.
+
+For **Intel**:
+
+```bash
+dmesg | grep -e DMAR -e IOMMU
+```
+
+For **AMD**:
+```bash
+dmesg | grep -e DMAR -e IOMMU -e AMD-Vi
+```
+
+If there's no output you've done something wrong, please retrace your steps or contact us (Email: support@hsve.cc).
+
+You should be seeing something like this:
+"DMAR: IOMMU Enabled"
+
+The next steps is enabling the modules required for GPU passthrough:
+
+Enable the neccesary modules by running the following command:
+
+```bash
+nano /etc/modules
+```
+Add the following lines to this file:
+```bash
+vfio
+vfio_iommu_type1
+vfio_pci
+```
+Hit **Ctrl** + **X** > **Y** **Enter** to Save changes.
+
+After changing the following modules you need to refresh your initramfs with the following command:
+```bash
+update-initramfs -u -k all
+```
