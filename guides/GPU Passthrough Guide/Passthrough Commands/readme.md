@@ -59,3 +59,24 @@ Hit **Ctrl + X → Y → Enter** to save changes.
 Your system might not be relying on Grub, but **systemd** instead.  
 This is often the case when you’re using **ZFS**.  
 So for **systemd**;
+
+# Intel CPUs (Systemd)
+
+```
+nano /etc/kernel/cmdline
+```
+
+```bash
+root=ZFS=rpool/ROOT/pve-1 boot=zfs intel_iommu=on iommu=pt initcall_blacklist
+=sysfb_init
+```
+
+# AMD CPUs (systemd)
+
+```
+nano /etc/kernel/cmdline
+```
+
+```bash
+GRUB_CMDLINE_LINUX_DEFAULT="quiet iommu=pt initcall_blacklist=sysfb_init"
+```
