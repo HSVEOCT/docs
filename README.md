@@ -7,10 +7,6 @@ With over 2 years of experience in the Proxmox Virtual Environment Hypervisor Pl
 
 https://youtube.com/@hsveoct
 
-## Our Awards
-We were kindly nominated and won The Most Trusted Open-Source Virtualisation Solutions Provider 2025!<br></br>
-![SME Awards Badge](<SME Awards Badge.png>)
-
 ## Meet our Community
 And because I believe in the power of connection and collaboration, I’ve created a tech community on Discord. It's a fantastic place to connect with other IT professionals, tech enthusiasts and others who share your passion.
 
@@ -26,3 +22,7 @@ Find all of our useful documentation and commands linked above!
 Find our YouTube channel with useful guides and tech updates above!
 ### [HSVE Website](https://hsve.cc)
 Take a look at our website about for more info about us and also our services, such as our award winning HSVE Templates and Consultations!
+
+## Our Awards
+We were kindly nominated and won The Most Trusted Open-Source Virtualisation Solutions Provider 2025!<br></br>
+![SME Awards Badge](<SME Awards Badge.png>)
