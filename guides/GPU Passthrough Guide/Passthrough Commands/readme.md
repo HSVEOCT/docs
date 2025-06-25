@@ -1,4 +1,4 @@
-## Optional Steps
+## HSVE Proxmox PCI-E Passthrough Guide
 
 _This step is not necessary for the passthrough, but helps keeping things clean._
 
