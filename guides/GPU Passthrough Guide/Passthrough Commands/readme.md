@@ -153,7 +153,36 @@ If your system doesn't support Remapping you can run this command to enable rema
 nano /etc/modprobe.d/iommu_unsafe_interrupts.conf
 ```
 Add the following line:
-```
+```bash
 options vfio_iommu_type1 allow_unsafe_interrupts=1
 ```
 Hit **Ctrl** + **X** > **Y** > **Enter** to save your changes.
+
+---
+
+## Blacklisting driver modules to give VM full access to Hardware.
+```bash
+nano /etc/modprobe.d/pve-blacklist.conf 
+```
+```bash
+blacklist nouveau
+blacklist nvidia
+blacklist nvidiafb
+blacklist snd_hda_codec_hdmi
+blacklist snd_hda_intel
+blacklist snd_hda_codec
+blacklist snd_hda_core
+blacklist radeon
+blacklist amdgpu
+```
+Hit **Ctrl** + **X** > **Y** > **Enter**
+
+# Blacklisting your Devices
+To find the corresponding IDs for your PCI devices run the following command:
+```bash
+lspci -nn | grep -i {device}
+```
+Replace {device} = vga,usb,audio,wireless etc.
+
+You will see an output similar to the below screenshot:
+![Screenshot of output- lspci command](<Screenshot 2025-06-25 121951.png>)
