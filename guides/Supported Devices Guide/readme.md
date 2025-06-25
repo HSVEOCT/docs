@@ -3,7 +3,7 @@
 Select from the below 2 options to get started:
 <br></br>
 ### [WiFi/Bluetooth Devices](https://github.com/HSVEOCT/docs/blob/main/guides/Supported%20Devices%20Guide/readme.md#wifibluetooth-devices-list)
-### [Compatible GPUs](https://github.com/HSVEOCT/docs/blob/main/guides/Supported%20Devices%20Guide/readme.md#compatible-gpus)
+### [Compatible GPUs](https://github.com/HSVEOCT/docs/blob/main/guides/Supported%20Devices%20Guide/readme.md#compatible-gpus-1)
 
 <br></br>
 <br>
