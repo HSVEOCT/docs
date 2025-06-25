@@ -1,4 +1,4 @@
-# Proxmox macOS Support Devices
+# Proxmox macOS Supported PCI-E Devices
 <br></br>
 Select from the below 2 options to get started:
 <br></br>
