@@ -184,6 +184,5 @@ lspci -nn | grep -i {device}
 ```
 Replace {device} = vga,usb,audio,wireless etc.
 
-You will see an output similar to the below screenshot:
-
+You will see an output similar to the below screenshot:  
 ![Screenshot of output- lspci command](<Screenshot 2025-06-25 121951.png>)
